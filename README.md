@@ -1,3 +1,5 @@
+![Kotlin version](https://img.shields.io/badge/kotlin-v1.3.61-blue)
+
 # Kotlin Mobile Multiplatform Template
 
 A template for Kotlin mobile multiplatform projects that leverages the new Kotlin DSL, has clear boundaries between 
