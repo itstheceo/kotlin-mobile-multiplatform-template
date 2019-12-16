@@ -1,0 +1,13 @@
+**.DS_Store
+*.iml
+.gradle
+.idea/*
+android/.gradle/*
+android/.idea/*
+android/build/*
+build
+ios/iosApp.xcodeproj/xcuserdata/*
+ios/iosApp.xcodeproj/project.xcworkspace/xcuserdata/*
+ios/iosApp.xcworkspace/xcuserdata/*
+ios/Pods/*
+local.properties

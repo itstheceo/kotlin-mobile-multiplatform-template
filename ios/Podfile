@@ -1,0 +1,5 @@
+platform :ios, '12.4'
+
+target 'iosApp' do
+    pod 'core', :path => '../core'
+end
