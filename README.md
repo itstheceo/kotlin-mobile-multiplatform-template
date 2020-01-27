@@ -23,3 +23,7 @@ such as;
 
 Be careful bumping versions here, as the ABI (Application Binary Interface) must match between dependencies or you'll 
 have a bad time.
+
+### SwiftUI
+
+Check out the swift_ui branch if you prefer working with SwiftUI!
