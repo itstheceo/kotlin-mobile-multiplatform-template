@@ -3,6 +3,7 @@ package com.example.androidapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import sample.hello
 
 class MainActivity : AppCompatActivity() {
@@ -11,6 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Log.i("MainActivity", hello())
+        val textView = findViewById<TextView>(R.id.text_view)
+        textView.text = hello()
     }
 }

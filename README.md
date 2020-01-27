@@ -1,4 +1,5 @@
 ![Kotlin version](https://img.shields.io/badge/kotlin-v1.3.61-blue)
+![Gradle version](https://img.shields.io/badge/gradle-v5.5.1-blue)
 
 # Kotlin Mobile Multiplatform Template
 
@@ -12,10 +13,16 @@ modules, and tidy integration with the consuming native platforms.
 Config settings can be found in `buildSrc/.../Config` including the project name and app identifiers. You'll most 
 likely want to change these after cloning the template.
 
+Don't forget to update `local.properties` to point at your Android sdk
+```
+sdk.dir=/Users/<username>/Library/Android/sdk
+```
+
 ### Dependencies
 
 Dependencies can be found in `buildSrc/.../Dependencies`. I've included some useful dependencies out of the box, 
 such as;
+
 - Kotlinx.Coroutines
 - Kotlinx.Serialization
 - Ktor
