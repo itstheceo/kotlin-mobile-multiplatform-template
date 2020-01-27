@@ -1,4 +1,5 @@
-platform :ios, '12.4'
+platform :ios, '13'
+use_frameworks!
 
 target 'iosApp' do
     pod 'core', :path => '../core'

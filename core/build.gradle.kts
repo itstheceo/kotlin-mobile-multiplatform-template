@@ -91,6 +91,11 @@ kotlin {
                 implementation(Dependencies.Core.SqlDelight.Driver.ios)
             }
         }
+        targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget> {
+            binaries.withType<org.jetbrains.kotlin.gradle.plugin.mpp.Framework> {
+                isStatic = false
+            }
+        }
     }
 }
 
