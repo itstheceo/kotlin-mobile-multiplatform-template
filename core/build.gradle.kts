@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
     id("com.android.library")
     id("kotlin-multiplatform")
@@ -20,7 +18,7 @@ repositories {
 group = Config.Core.groupIdentifier
 version = Config.Core.version
 
-tasks.withType<KotlinCompile>().all {
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().all {
     kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
 }
 
