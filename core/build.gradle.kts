@@ -60,10 +60,12 @@ kotlin {
         }
         getByName("commonTest") {
             dependencies {
+                dependsOn(getByName("commonMain"))
                 implementation(Dependencies.Core.Kotlin.test)
                 implementation(Dependencies.Core.Kotlin.testCommon)
                 implementation(Dependencies.Core.Kotlin.testAnnotationsCommon)
                 implementation(Dependencies.Core.Kotlinx.Coroutines.test)
+                implementation(Dependencies.Core.Ktor.Client.Mock.common)
             }
         }
         getByName("androidMain") {
@@ -78,6 +80,14 @@ kotlin {
                 implementation(Dependencies.Core.SqlDelight.Driver.android)
             }
         }
+        getByName("androidTest") {
+            dependencies {
+                dependsOn(getByName("androidMain"))
+                implementation(Dependencies.Core.Kotlin.jUnit)
+                implementation(Dependencies.Core.Ktor.Client.Mock.android)
+                implementation(Dependencies.Core.SqlDelight.Driver.androidTest)
+            }
+        }
         getByName("iosMain") {
             dependencies {
                 implementation(Dependencies.Core.Kotlinx.Coroutines.native)
@@ -87,6 +97,12 @@ kotlin {
                 implementation(Dependencies.Core.Ktor.ClientSerialization.native)
                 implementation(Dependencies.Core.Ktor.ClientLogging.native)
                 implementation(Dependencies.Core.SqlDelight.Driver.ios)
+            }
+        }
+        getByName("iosTest") {
+            dependencies {
+                dependsOn(getByName("iosMain"))
+                implementation(Dependencies.Core.Ktor.Client.Mock.native)
             }
         }
         targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget> {
@@ -101,3 +117,5 @@ xcodeSync {
     projectPath = Config.IOS.projectPath
     target = Config.IOS.projectTarget
 }
+
+apply("logging.gradle")

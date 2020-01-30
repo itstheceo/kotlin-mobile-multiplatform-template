@@ -17,11 +17,12 @@ object Dependencies {
         object Kotlin {
             const val version = "1.3.61"
 
+            const val jUnit = "org.jetbrains.kotlin:kotlin-test-junit:$version"
             const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib:$version"
             const val stdlibCommon = "org.jetbrains.kotlin:kotlin-stdlib-common:$version"
             const val test = "org.jetbrains.kotlin:kotlin-test:$version"
-            const val testCommon = "org.jetbrains.kotlin:kotlin-test-common:$version"
             const val testAnnotationsCommon = "org.jetbrains.kotlin:kotlin-test-annotations-common:$version"
+            const val testCommon = "org.jetbrains.kotlin:kotlin-test-common:$version"
         }
 
         object Kotlinx {
@@ -46,6 +47,11 @@ object Dependencies {
             const val version = "1.2.6" // kotlin 1.3.60
 
             object Client {
+                object Mock {
+                    const val android = "io.ktor:ktor-client-mock-jvm:$version"
+                    const val common = "io.ktor:ktor-client-mock:$version"
+                    const val native = "io.ktor:ktor-client-mock-native:$version"
+                }
                 const val android = "io.ktor:ktor-client-android:$version"
                 const val core = "io.ktor:ktor-client-core:$version"
                 const val ios = "io.ktor:ktor-client-ios:$version"
@@ -73,6 +79,7 @@ object Dependencies {
 
             object Driver {
                 const val android = "com.squareup.sqldelight:android-driver:$version"
+                const val androidTest = "com.squareup.sqldelight:sqlite-driver:$version"
                 const val ios = "com.squareup.sqldelight:ios-driver:$version"
             }
         }
