@@ -3,17 +3,33 @@ name: Core CI
 on: [push]
 
 jobs:
-  build:
-
+  jvm-test:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up JDK 1.8
-      uses: actions/setup-java@v1
-      with:
-        java-version: 1.8
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-    - name: Run debug unit tests
-      run: ./gradlew clean core:testDebugUnitTest
+      - name: Checkout the repo
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Run unit tests
+        run: ./gradlew clean core:test
+  
+  native-test:
+    runs-on: macos-latest
+    
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v2
+    
+      - name: Grant execute permission for gradelw
+        run: chmod +x gradlew
+      
+      - name: Run unit tests
+        run: ./gradlew clean core:iosTest
