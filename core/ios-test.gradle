@@ -1,0 +1,13 @@
+task iosTest {
+    dependsOn 'linkDebugTestIos'
+    description = "Runs tests for target 'ios' on an iOS simulator"
+
+    def device = project.findProperty("iosDevice")?.toString() ?: "iPhone 8"
+
+    doLast {
+        def binary = kotlin.targets.ios.binaries.getTest('DEBUG').outputFile
+        exec {
+            commandLine 'xcrun', 'simctl', 'spawn', '--standalone', device, binary.absolutePath
+        }
+    }
+}

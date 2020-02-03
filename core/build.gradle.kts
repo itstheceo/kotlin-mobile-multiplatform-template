@@ -119,3 +119,4 @@ xcodeSync {
 }
 
 apply("logging.gradle")
+apply("ios-test.gradle")
