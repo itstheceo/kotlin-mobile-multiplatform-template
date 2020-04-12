@@ -1,3 +1,6 @@
+# Deprecated
+This template is no longer being maintained, check out [KaMP Kit](https://github.com/touchlab/KaMPKit) by Touchlab instead.
+
 ![Core CI](https://github.com/itstheceo/kotlin-mobile-multiplatform-template/workflows/Core%20CI/badge.svg)
 ![Kotlin version](https://img.shields.io/badge/kotlin-v1.3.61-blue)
 ![Gradle version](https://img.shields.io/badge/gradle-v5.5.1-blue)
