@@ -70,6 +70,7 @@ kotlin {
         }
         getByName("androidMain") {
             dependencies {
+                dependsOn(getByName("commonMain"))
                 implementation(Dependencies.Core.Kotlin.stdlib)
                 implementation(Dependencies.Core.Kotlinx.Coroutines.android)
                 implementation(Dependencies.Core.Kotlinx.Serialization.android)
@@ -85,18 +86,18 @@ kotlin {
                 dependsOn(getByName("androidMain"))
                 implementation(Dependencies.Core.Kotlin.jUnit)
                 implementation(Dependencies.Core.Ktor.Client.Mock.android)
-                implementation(Dependencies.Core.SqlDelight.Driver.androidTest)
             }
         }
         getByName("iosMain") {
             dependencies {
+                dependsOn(getByName("commonMain"))
                 implementation(Dependencies.Core.Kotlinx.Coroutines.native)
                 implementation(Dependencies.Core.Kotlinx.Serialization.native)
                 implementation(Dependencies.Core.Ktor.Client.ios)
                 implementation(Dependencies.Core.Ktor.ClientJson.native)
                 implementation(Dependencies.Core.Ktor.ClientSerialization.native)
                 implementation(Dependencies.Core.Ktor.ClientLogging.native)
-                implementation(Dependencies.Core.SqlDelight.Driver.ios)
+                implementation(Dependencies.Core.SqlDelight.Driver.native)
             }
         }
         getByName("iosTest") {

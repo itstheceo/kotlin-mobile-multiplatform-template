@@ -1,4 +1,4 @@
-task iosTest {
+task iosTests {
     dependsOn 'linkDebugTestIos'
     description = "Runs tests for target 'ios' on an iOS simulator"
 

@@ -1,6 +1,6 @@
 object Dependencies {
-    const val gradlePluginVersion = "3.5.2"
-    const val kotlinxCodeSyncVersion = "0.2"
+    const val gradlePluginVersion = "3.6.0"
+    const val kotlinxCodeSyncVersion = "0.2" // TODO: remove? https://github.com/touchlab/xcode-kotlin/issues/16
 
     object Android {
         object X {
@@ -15,7 +15,7 @@ object Dependencies {
 
     object Core { // Be careful bumping versions here; the ABI version must match between dependencies on iOS
         object Kotlin {
-            const val version = "1.3.61"
+            const val version = "1.3.71"
 
             const val jUnit = "org.jetbrains.kotlin:kotlin-test-junit:$version"
             const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib:$version"
@@ -27,7 +27,7 @@ object Dependencies {
 
         object Kotlinx {
             object Coroutines {
-                const val version = "1.3.3" // kotlin 1.3.61
+                const val version = "1.3.4" // kotlin 1.3.70
 
                 const val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version"
                 const val common = "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$version"
@@ -35,7 +35,7 @@ object Dependencies {
                 const val test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$version"
             }
             object Serialization {
-                const val version = "0.14.0" // kotlin 1.3.60
+                const val version = "0.20.0" // kotlin 1.3.70
 
                 const val android = "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$version"
                 const val common = "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$version"
@@ -44,7 +44,7 @@ object Dependencies {
         }
 
         object Ktor {
-            const val version = "1.2.6" // kotlin 1.3.60
+            const val version = "1.3.2" // kotlin 1.3.70
 
             object Client {
                 object Mock {
@@ -74,13 +74,12 @@ object Dependencies {
         }
 
         object SqlDelight {
-            const val version = "1.2.1" // kotlin 1.3.60
+            const val version = "1.3.0" // kotlin 1.3.71
             const val runtime = "com.squareup.sqldelight:runtime:$version"
 
             object Driver {
                 const val android = "com.squareup.sqldelight:android-driver:$version"
-                const val androidTest = "com.squareup.sqldelight:sqlite-driver:$version"
-                const val ios = "com.squareup.sqldelight:ios-driver:$version"
+                const val native = "com.squareup.sqldelight:native-driver:$version"
             }
         }
     }
